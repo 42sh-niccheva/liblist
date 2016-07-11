@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/07/11 13:39:26 by llapillo         ###   ########.fr        #
+#    Updated: 2016/07/11 15:12:51 by llapillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -43,6 +43,7 @@ SOURCES		+=	hashtable_delete.c
 SOURCES		+=	hashtable_delete_entry.c
 SOURCES		+=	hashtable_new_elem.c
 SOURCES		+=	hashtable_modify_elem.c
+SOURCES		+=	hashtable_search_key.c
 
 OBJECTS		=	$(patsubst %.c, $(BUILD)/$(DOBJECTS)%.o, $(SOURCES))
 
