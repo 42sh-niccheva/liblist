@@ -6,31 +6,31 @@
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/11 15:00:43 by llapillo          #+#    #+#             */
-/*   Updated: 2016/07/11 15:16:47 by llapillo         ###   ########.fr       */
+/*   Updated: 2016/07/11 16:04:27 by llapillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hashtable.h"
 
-int		hashtable_search_key(const t_hashtable *hashtable, const char *key)
+t_hashtable	*hashtable_search_key(const t_hashtable *hashtable, const char *key)
 {
-	int				value;
 	t_hashtable		*entry;
+	t_hashtable		*elem;
 	t_list			*pos;
 
-	value = 1;
+	elem = NULL;
 	if (hashtable == NULL || key == NULL)
-		return (-1);
+		return (elem);
 	pos = (&(hashtable->list))->next;
 	while (pos != &(hashtable->list))
 	{
 		entry = LIST_ENTRY(pos, t_hashtable, list);
 		if (!ft_strcmp(entry->key, key))
 		{
-			value = 0;
+			elem = entry;
 			break ;
 		}
 		pos = pos->next;
 	}
-	return (value);
+	return (elem);
 }
