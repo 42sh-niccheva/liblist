@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hastable_create_from_tab.c                         :+:      :+:    :+:   */
+/*   hashtable_new_elem.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/08 10:41:37 by llapillo          #+#    #+#             */
-/*   Updated: 2016/07/08 14:58:41 by llapillo         ###   ########.fr       */
+/*   Created: 2016/07/11 10:49:47 by llapillo          #+#    #+#             */
+/*   Updated: 2016/07/11 11:05:49 by llapillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hashtable.h"
 
-static void			extract_data(const char *line, const char *delim,
+static void		extract_data(const char *line, const char *delim,
 								t_hashtable **elem)
 {
 	char		*ptr;
@@ -27,7 +27,7 @@ static void			extract_data(const char *line, const char *delim,
 	}
 }
 
-static t_hashtable	*new_elem_hashtable(const char *line, const char *delim)
+t_hashtable		*hashtable_new_elem(const char *line, const char *delim)
 {
 	t_hashtable	*new;
 
@@ -41,29 +41,4 @@ static t_hashtable	*new_elem_hashtable(const char *line, const char *delim)
 		init_list(&(new->list));
 	}
 	return (new);
-}
-
-t_hashtable			*hashtable_create_from_tab(const char **tab,
-											const char *delim)
-{
-	t_hashtable	*hashtable;
-	t_hashtable	*new;
-	int			i;
-
-	hashtable = NULL;
-	if (tab && delim)
-	{
-		new = NULL;
-		i = 0;
-		if ((hashtable = new_elem_hashtable(NULL, NULL)) != NULL)
-		{
-			while (tab[i])
-			{
-				if ((new = new_elem_hashtable(tab[i], delim)) != NULL)
-					list_add_tail(&(new->list), &(hashtable->list));
-				i++;
-			}
-		}
-	}
-	return (hashtable);
 }

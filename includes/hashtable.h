@@ -6,7 +6,7 @@
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 10:23:04 by llapillo          #+#    #+#             */
-/*   Updated: 2016/07/08 16:06:29 by llapillo         ###   ########.fr       */
+/*   Updated: 2016/07/11 10:52:59 by llapillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void			display_hashtable_with_delim(t_hashtable *hashtable,
 t_hashtable		*hashtable_create_from_tab(const char **tab, const char *delim);
 char			**hashtable_create_to_tab(const t_hashtable *hashtable,
 										const char *delim);
+t_hashtable		*hashtable_new_elem(const char *line, const char *delim);
 
 #endif

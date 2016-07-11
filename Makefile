@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/07/08 14:56:58 by llapillo         ###   ########.fr        #
+#    Updated: 2016/07/11 10:54:27 by llapillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -38,8 +38,9 @@ SOURCES		+=	private_list_del.c
 SOURCES		+=	private_list_del_entry.c
 SOURCES		+=	hashtable_create_from_tab.c
 SOURCES		+=	hashtable_create_to_tab.c
-SOURCES		+=	display_hashtable.c
-SOURCES		+=	delete_hashtable.c
+SOURCES		+=	hashtable_display.c
+SOURCES		+=	hashtable_delete.c
+SOURCES		+=	hashtable_new_elem.c
 
 OBJECTS		=	$(patsubst %.c, $(BUILD)/$(DOBJECTS)%.o, $(SOURCES))
 
