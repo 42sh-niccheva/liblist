@@ -6,7 +6,7 @@
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/11 10:49:47 by llapillo          #+#    #+#             */
-/*   Updated: 2016/07/11 11:05:49 by llapillo         ###   ########.fr       */
+/*   Updated: 2016/09/06 14:39:40 by niccheva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_hashtable		*hashtable_new_elem(const char *line, const char *delim)
 {
 	t_hashtable	*new;
 
-	new = (t_hashtable *)malloc(sizeof(t_hashtable));
+	new = (t_hashtable *)malloc(sizeof(*new));
 	if (new)
 	{
 		new->key = NULL;

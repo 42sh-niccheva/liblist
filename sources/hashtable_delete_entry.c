@@ -6,7 +6,7 @@
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/11 12:26:46 by llapillo          #+#    #+#             */
-/*   Updated: 2016/07/11 12:32:54 by llapillo         ###   ########.fr       */
+/*   Updated: 2016/09/06 14:31:43 by niccheva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	hashtable_delete_entry(t_hashtable **elem)
 	ft_strdel(&(entry->value));
 	list_del(&(entry->list));
 	free(entry);
+	*elem = NULL;
 }

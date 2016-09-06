@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/09/06 11:31:36 by niccheva         ###   ########.fr        #
+#    Updated: 2016/09/06 14:56:06 by niccheva         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -40,7 +40,7 @@ LIST		+=	private_list_del_entry.c
 
 HASHTABLE	=	hashtable_create_from_tab.c
 HASHTABLE	+=	hashtable_create_to_tab.c
-HASHTABLE	+=	hashtable_display.c
+HASHTABLE	+=	hashtable_display_with_delim.c
 HASHTABLE	+=	hashtable_delete.c
 HASHTABLE	+=	hashtable_delete_entry.c
 HASHTABLE	+=	hashtable_new_elem.c
