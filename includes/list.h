@@ -6,7 +6,7 @@
 /*   By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 14:19:31 by niccheva          #+#    #+#             */
-/*   Updated: 2016/06/09 15:02:33 by niccheva         ###   ########.fr       */
+/*   Updated: 2016/09/06 11:21:37 by niccheva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # define LIST_FIRST_ENTRY(p, t, m) LIST_ENTRY((p)->next, t ,m)
 
 # define LIST_LAST_ENTRY(p, t, m) LIST_ENTRY((p)->prev, t, m)
+
+# include <sys/types.h>
 
 typedef struct s_list	t_list;
 
@@ -45,5 +47,6 @@ int						list_empty(const t_list *list);
 int						list_is_last(const t_list *list,
 									const t_list *head);
 int						list_is_singular(const t_list *head);
+size_t					list_size(const t_list *head);
 
 #endif

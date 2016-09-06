@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/07/11 15:12:51 by llapillo         ###   ########.fr        #
+#    Updated: 2016/09/06 11:31:36 by niccheva         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,25 +25,32 @@ BUILD		=	./build
 INCLUDES	=	-I./includes
 INCLUDES	+=	-I../libft/includes
 
-SOURCES		=	init_list.c
-SOURCES		+=	list_add.c
-SOURCES		+=	list_add_tail.c
-SOURCES		+=	list_del.c
-SOURCES		+=	list_del_init.c
-SOURCES		+=	list_empty.c
-SOURCES		+=	list_is_last.c
-SOURCES		+=	list_is_singular.c
-SOURCES		+=	private_list_add.c
-SOURCES		+=	private_list_del.c
-SOURCES		+=	private_list_del_entry.c
-SOURCES		+=	hashtable_create_from_tab.c
-SOURCES		+=	hashtable_create_to_tab.c
-SOURCES		+=	hashtable_display.c
-SOURCES		+=	hashtable_delete.c
-SOURCES		+=	hashtable_delete_entry.c
-SOURCES		+=	hashtable_new_elem.c
-SOURCES		+=	hashtable_modify_elem.c
-SOURCES		+=	hashtable_search_key.c
+LIST		=	init_list.c
+LIST		+=	list_add.c
+LIST		+=	list_add_tail.c
+LIST		+=	list_del.c
+LIST		+=	list_del_init.c
+LIST		+=	list_empty.c
+LIST		+=	list_is_last.c
+LIST		+=	list_is_singular.c
+LIST		+=	list_size.c
+LIST		+=	private_list_add.c
+LIST		+=	private_list_del.c
+LIST		+=	private_list_del_entry.c
+
+HASHTABLE	=	hashtable_create_from_tab.c
+HASHTABLE	+=	hashtable_create_to_tab.c
+HASHTABLE	+=	hashtable_display.c
+HASHTABLE	+=	hashtable_delete.c
+HASHTABLE	+=	hashtable_delete_entry.c
+HASHTABLE	+=	hashtable_new_elem.c
+HASHTABLE	+=	hashtable_modify_elem.c
+HASHTABLE	+=	hashtable_search_key.c
+HASHTABLE	+=	hashtable_keys.c
+HASHTABLE	+=	hashtable_values.c
+
+SOURCES		=	$(LIST)
+SOURCES		+=	$(HASHTABLE)
 
 OBJECTS		=	$(patsubst %.c, $(BUILD)/$(DOBJECTS)%.o, $(SOURCES))
 

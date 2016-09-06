@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab_to_hashtable.h                                 :+:      :+:    :+:   */
+/*   hashtable.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 10:23:04 by llapillo          #+#    #+#             */
-/*   Updated: 2016/07/11 16:02:39 by llapillo         ###   ########.fr       */
+/*   Updated: 2016/09/06 09:00:52 by niccheva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TAB_TO_HASHTABLE_H
-# define TAB_TO_HASHTABLE_H
+#ifndef HASHTABLE_H
+# define HASHTABLE_H
 
 # include "list.h"
 # include "libft.h"
@@ -37,5 +37,8 @@ void			hashtable_modify_elem(t_hashtable *elem, const char *key,
 t_hashtable		*hashtable_new_elem(const char *line, const char *delim);
 t_hashtable		*hashtable_search_key(const t_hashtable *hashtable,
 									const char *key);
+
+char			**hashtable_keys(const t_hashtable *hashtable);
+char			**hashtable_values(const t_hashtable *hashtable);
 
 #endif
