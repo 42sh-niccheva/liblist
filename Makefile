@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/09/06 14:56:06 by niccheva         ###   ########.fr        #
+#    Updated: 2016/09/15 21:46:58 by niccheva         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,29 +25,32 @@ BUILD		=	./build
 INCLUDES	=	-I./includes
 INCLUDES	+=	-I../libft/includes
 
-LIST		=	init_list.c
-LIST		+=	list_add.c
-LIST		+=	list_add_tail.c
-LIST		+=	list_del.c
-LIST		+=	list_del_init.c
-LIST		+=	list_empty.c
-LIST		+=	list_is_last.c
-LIST		+=	list_is_singular.c
-LIST		+=	list_size.c
-LIST		+=	private_list_add.c
-LIST		+=	private_list_del.c
-LIST		+=	private_list_del_entry.c
+LISTPATH	=	list/
+HASHPATH	=	hashtable/
 
-HASHTABLE	=	hashtable_create_from_tab.c
-HASHTABLE	+=	hashtable_create_to_tab.c
-HASHTABLE	+=	hashtable_display_with_delim.c
-HASHTABLE	+=	hashtable_delete.c
-HASHTABLE	+=	hashtable_delete_entry.c
-HASHTABLE	+=	hashtable_new_elem.c
-HASHTABLE	+=	hashtable_modify_elem.c
-HASHTABLE	+=	hashtable_search_key.c
-HASHTABLE	+=	hashtable_keys.c
-HASHTABLE	+=	hashtable_values.c
+LIST		=	$(LISTPATH)init_list.c
+LIST		+=	$(LISTPATH)list_add.c
+LIST		+=	$(LISTPATH)list_add_tail.c
+LIST		+=	$(LISTPATH)list_del.c
+LIST		+=	$(LISTPATH)list_del_init.c
+LIST		+=	$(LISTPATH)list_empty.c
+LIST		+=	$(LISTPATH)list_is_last.c
+LIST		+=	$(LISTPATH)list_is_singular.c
+LIST		+=	$(LISTPATH)list_size.c
+LIST		+=	$(LISTPATH)private_list_add.c
+LIST		+=	$(LISTPATH)private_list_del.c
+LIST		+=	$(LISTPATH)private_list_del_entry.c
+
+HASHTABLE	=	$(HASHPATH)hashtable_create_from_tab.c
+HASHTABLE	+=	$(HASHPATH)hashtable_create_to_tab.c
+HASHTABLE	+=	$(HASHPATH)hashtable_display_with_delim.c
+HASHTABLE	+=	$(HASHPATH)hashtable_delete.c
+HASHTABLE	+=	$(HASHPATH)hashtable_delete_entry.c
+HASHTABLE	+=	$(HASHPATH)hashtable_new_elem.c
+HASHTABLE	+=	$(HASHPATH)hashtable_modify_elem.c
+HASHTABLE	+=	$(HASHPATH)hashtable_search_key.c
+HASHTABLE	+=	$(HASHPATH)hashtable_keys.c
+HASHTABLE	+=	$(HASHPATH)hashtable_values.c
 
 SOURCES		=	$(LIST)
 SOURCES		+=	$(HASHTABLE)
@@ -67,7 +70,8 @@ $(BUILD)/$(NAME): $(OBJECTS)
 -include $(OBJECTS:.o=.d)
 
 $(BUILD)/$(DOBJECTS)%.o: $(DSOURCES)%.c
-	@mkdir -p $(BUILD)/$(DOBJECTS)
+	@mkdir -p $(BUILD)/$(DOBJECTS)$(LISTPATH)
+	@mkdir -p $(BUILD)/$(DOBJECTS)$(HASHPATH)
 	@echo "\033[0;32m$< compiled:\t\033[0;m\c"
 	$(CC) $(CFLAGS) $(DEPENDS) -o $@ -c $< $(INCLUDES)
 
