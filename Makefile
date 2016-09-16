@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/09/15 21:46:58 by niccheva         ###   ########.fr        #
+#    Updated: 2016/09/16 08:44:56 by niccheva         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,6 +26,7 @@ INCLUDES	=	-I./includes
 INCLUDES	+=	-I../libft/includes
 
 LISTPATH	=	list/
+STRINGPATH	=	string_list/
 HASHPATH	=	hashtable/
 
 LIST		=	$(LISTPATH)init_list.c
@@ -41,6 +42,12 @@ LIST		+=	$(LISTPATH)private_list_add.c
 LIST		+=	$(LISTPATH)private_list_del.c
 LIST		+=	$(LISTPATH)private_list_del_entry.c
 
+STRING		=	$(STRINGPATH)create_string_list.c
+STRING		+=	$(STRINGPATH)delete_string_list.c
+STRING		+=	$(STRINGPATH)delete_string_list_entry.c
+STRING		+=	$(STRINGPATH)string_list_add.c
+STRING		+=	$(STRINGPATH)string_list_size.c
+
 HASHTABLE	=	$(HASHPATH)hashtable_create_from_tab.c
 HASHTABLE	+=	$(HASHPATH)hashtable_create_to_tab.c
 HASHTABLE	+=	$(HASHPATH)hashtable_display_with_delim.c
@@ -54,6 +61,7 @@ HASHTABLE	+=	$(HASHPATH)hashtable_values.c
 
 SOURCES		=	$(LIST)
 SOURCES		+=	$(HASHTABLE)
+SOURCES		+=	$(STRING)
 
 OBJECTS		=	$(patsubst %.c, $(BUILD)/$(DOBJECTS)%.o, $(SOURCES))
 
@@ -72,6 +80,7 @@ $(BUILD)/$(NAME): $(OBJECTS)
 $(BUILD)/$(DOBJECTS)%.o: $(DSOURCES)%.c
 	@mkdir -p $(BUILD)/$(DOBJECTS)$(LISTPATH)
 	@mkdir -p $(BUILD)/$(DOBJECTS)$(HASHPATH)
+	@mkdir -p $(BUILD)/$(DOBJECTS)$(STRINGPATH)
 	@echo "\033[0;32m$< compiled:\t\033[0;m\c"
 	$(CC) $(CFLAGS) $(DEPENDS) -o $@ -c $< $(INCLUDES)
 
