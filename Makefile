@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/09/16 08:44:56 by niccheva         ###   ########.fr        #
+#    Updated: 2016/09/16 13:47:08 by llapillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -48,7 +48,8 @@ STRING		+=	$(STRINGPATH)delete_string_list_entry.c
 STRING		+=	$(STRINGPATH)string_list_add.c
 STRING		+=	$(STRINGPATH)string_list_size.c
 
-HASHTABLE	=	$(HASHPATH)hashtable_create_from_tab.c
+HASHTABLE	=	$(HASHPATH)hashtable_add.c
+HASHTABLE	+=	$(HASHPATH)hashtable_create_from_tab.c
 HASHTABLE	+=	$(HASHPATH)hashtable_create_to_tab.c
 HASHTABLE	+=	$(HASHPATH)hashtable_display_with_delim.c
 HASHTABLE	+=	$(HASHPATH)hashtable_delete.c

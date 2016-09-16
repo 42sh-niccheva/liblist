@@ -6,7 +6,7 @@
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 10:23:04 by llapillo          #+#    #+#             */
-/*   Updated: 2016/09/06 14:32:05 by niccheva         ###   ########.fr       */
+/*   Updated: 2016/09/16 13:46:18 by llapillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ struct			s_hashtable
 	t_list		list;
 };
 
+void			hashtable_add(t_hashtable *hashtable, t_hashtable *new);
 void			hashtable_delete(t_hashtable *hashtable);
 void			hashtable_delete_entry(t_hashtable **elem);
 void			hashtable_display_with_delim(const t_hashtable *hashtable,
