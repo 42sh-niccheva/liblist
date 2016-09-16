@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hashtable_new_elem.c                               :+:      :+:    :+:   */
+/*   hashtable_new.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/11 10:49:47 by llapillo          #+#    #+#             */
-/*   Updated: 2016/09/16 14:07:34 by llapillo         ###   ########.fr       */
+/*   Created: 2016/09/16 13:52:58 by llapillo          #+#    #+#             */
+/*   Updated: 2016/09/16 14:01:58 by llapillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hashtable.h"
 
-t_hashtable		*hashtable_new_elem(const char *line, const char *delim)
+t_hashtable			*hashtable_new(const char *key, const char *value)
 {
-	t_hashtable	*new;
-	char		*key;
-	char		*value;
-	char		*ptr;
-	size_t		size;
+	t_hashtable		*new;
 
-	new = NULL;
-	if ((ptr = ft_strstr(line, delim)) != NULL)
+	new = (t_hashtable *)malloc(sizeof(*new));
+	if (new)
 	{
-		size = ptr - line;
-		key = ft_strndup(line, size);
-		ptr += ft_strlen(delim);
-		value = ft_strdup(ptr);
-		new = hashtable_new(key, value);
-		ft_strdel(&key);
-		ft_strdel(&value);
+		new->key = ft_strdup(key);
+		new->value = ft_strdup(value);
+		init_list(&(new->list));
 	}
 	return (new);
 }

@@ -6,7 +6,7 @@
 #    By: niccheva <niccheva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/09 13:23:47 by niccheva          #+#    #+#              #
-#    Updated: 2016/09/16 13:47:08 by llapillo         ###   ########.fr        #
+#    Updated: 2016/09/16 14:08:56 by llapillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -54,6 +54,7 @@ HASHTABLE	+=	$(HASHPATH)hashtable_create_to_tab.c
 HASHTABLE	+=	$(HASHPATH)hashtable_display_with_delim.c
 HASHTABLE	+=	$(HASHPATH)hashtable_delete.c
 HASHTABLE	+=	$(HASHPATH)hashtable_delete_entry.c
+HASHTABLE	+=	$(HASHPATH)hashtable_new.c
 HASHTABLE	+=	$(HASHPATH)hashtable_new_elem.c
 HASHTABLE	+=	$(HASHPATH)hashtable_modify_elem.c
 HASHTABLE	+=	$(HASHPATH)hashtable_search_key.c
