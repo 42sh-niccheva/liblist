@@ -6,7 +6,7 @@
 /*   By: llapillo <llapillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 10:41:37 by llapillo          #+#    #+#             */
-/*   Updated: 2016/09/16 13:45:48 by llapillo         ###   ########.fr       */
+/*   Updated: 2016/09/16 14:22:08 by llapillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_hashtable			*hashtable_create_from_tab(const char **tab,
 	{
 		new = NULL;
 		i = 0;
-		if ((hashtable = hashtable_new_elem(NULL, NULL)) != NULL)
+		if ((hashtable = hashtable_new(NULL, NULL)) != NULL)
 		{
 			while (tab[i])
 			{
